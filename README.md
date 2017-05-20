@@ -15,6 +15,7 @@
 - [Supported Rules](#supported-rules)
 - [Contributors](#contributors)
 - [Contributing to `eslint-plugin-swagger-tools`](#contributing-to-eslint-plugin-swagger-tools)
+
 - [License](#license)
 
 <!-- /TOC -->
