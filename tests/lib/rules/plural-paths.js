@@ -87,17 +87,17 @@ ruleTester.run("plural-paths", rule, {
     }],
 
     invalid: [{
-            code: "module.exports = {\"swagger\":\"2.0\",\"paths\":{\"/pet\":null}};",
-            errors: [{
-                code: "module.exports = {\"swagger\":\"2.0\",\"paths\":{\"/pets\":null}};"
-            }]
-        },
-        {
-            code: "var spec = {\"swagger\":\"2.0\",\"paths\":{\"/pet/{chipId}\":null}};",
-            errors: [{
-                code: "var spec = {\"swagger\":\"2.0\",\"paths\":{\"/pets/{chipId}\":null}};"
-            }]
-        }
+        code: "module.exports = {\"swagger\":\"2.0\",\"paths\":{\"/pet\":null}};",
+        errors: [{
+            code: "module.exports = {\"swagger\":\"2.0\",\"paths\":{\"/pets\":null}};"
+        }]
+    },
+    {
+        code: "var spec = {\"swagger\":\"2.0\",\"paths\":{\"/pet/{chipId}\":null}};",
+        errors: [{
+            code: "var spec = {\"swagger\":\"2.0\",\"paths\":{\"/pets/{chipId}\":null}};"
+        }]
+    }
         // {
         //     code: JSON.stringify(spec.toString()),
         //     errors: createExpectedErrorMessages()
