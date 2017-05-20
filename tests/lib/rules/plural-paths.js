@@ -8,10 +8,8 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var {
-    map
-} = require("lodash"),
-    rule = require("../../../lib/rules/plural-paths"),
+// var { map } = require("lodash"),
+const rule = require("../../../lib/rules/plural-paths"),
     // fs = require("fs"),
     // spec = fs.readFileSync(__dirname + "/fixtures/pet-store.swagger.json"),
     RuleTester = require("eslint").RuleTester;
@@ -71,12 +69,13 @@ function createExpectedErrorMessages() {
         };
     });
 }
-*/
+
 let errors = [{
     message: "Style violation: API paths should have plural resources. Change resource \"/pet\" to \"/pets\" (or run eslint with the --fix flag) to automatically ensure style compliance."
 }, {
     message: "Style violation: API paths should have plural resources. Change resource \"/pet/{chipId}\" to \"/pets/{chipId}\" (or run eslint with the --fix flag) to automatically ensure style compliance."
 }];
+*/
 const ruleTester = new RuleTester();
 ruleTester.run("plural-paths", rule, {
 
