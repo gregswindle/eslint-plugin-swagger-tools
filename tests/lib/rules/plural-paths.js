@@ -12,13 +12,14 @@ var {
     map
 } = require("lodash"),
     rule = require("../../../lib/rules/plural-paths"),
-    fs = require('fs'),
-    spec = fs.readFileSync(__dirname + '/fixtures/pet-store.swagger.json'),
+    fs = require("fs"),
+    // spec = fs.readFileSync(__dirname + "/fixtures/pet-store.swagger.json"),
     RuleTester = require("eslint").RuleTester;
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
+/*
 function createExpectedErrorMessages() {
     const msg = `Style violation: API paths should have plural resources. Change resource \"INVALID_VAL\" to \"/VALID_VAL\" (or run eslint with the --fix flag) to automatically ensure style compliance.`;
     const paths = [{
@@ -70,6 +71,7 @@ function createExpectedErrorMessages() {
         };
     });
 }
+*/
 let errors = [{
     message: "Style violation: API paths should have plural resources. Change resource \"/pet\" to \"/pets\" (or run eslint with the --fix flag) to automatically ensure style compliance."
 }, {
