@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-swagger-tools",
   "version": "0.0.0-development",
-  "description": "An extensible linter for Swagger/OpenAPI specifications.",
+  "description": "An extensible linter with semantic validations for Swagger specifications.",
   "repository": {
     "type": "git",
     "url": "https://github.com/gregswindle/eslint-plugin-swagger-tools.git"
