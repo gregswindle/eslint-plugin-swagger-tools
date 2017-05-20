@@ -12,7 +12,7 @@ var {
     map
 } = require("lodash"),
     rule = require("../../../lib/rules/plural-paths"),
-    fs = require("fs"),
+    // fs = require("fs"),
     // spec = fs.readFileSync(__dirname + "/fixtures/pet-store.swagger.json"),
     RuleTester = require("eslint").RuleTester;
 
