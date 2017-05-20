@@ -1,6 +1,6 @@
-# Require API paths to use plural nouns for all resources (`plural-paths`)
+# Require plural nouns in API paths (`require-plural-paths`)
 
-> :red_circle: The `plural-paths` rule enforces consistent usage of plural nouns for all resources.
+> :red_circle: The `require-plural-paths` rule enforces consistent usage of plural nouns for all resources.
 
 
 ## Rule Details
@@ -43,7 +43,7 @@ Whether we use "dot" syntax or HTTP paths, we represent `customers` using the sa
 
 ### Examples of **incorrect** code for this rule
 
-:disappointed: The `plural-paths` rule throws an error whenever `swaggerApi.path` definitions use singular nouns instead of plural:
+:disappointed: The `require-plural-paths` rule throws an error whenever `swaggerApi.path` definitions use singular nouns instead of plural:
 
 ```js
 
@@ -55,7 +55,7 @@ Whether we use "dot" syntax or HTTP paths, we represent `customers` using the sa
 
 ### Examples of **correct** code for this rule
 
-:satisfied: The `plural-paths` rule validates `swaggerApi.paths` with resources that use the plural case:
+:satisfied: The `require-plural-paths` rule validates `swaggerApi.paths` with resources that use the plural case:
 
 ```js
 
@@ -86,7 +86,10 @@ If there are any options, describe them here. Otherwise, delete this section.
 
 ## When Not To Use It
 
-Give a short description of when it would be appropriate to turn off this rule.
+Disable this rule if your product's style guidelines
+
+* Enforce singular nouns in paths, or
+* Provide well-defined instructions for singular and plural resources
 
 ## Further Reading
 

@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // var { map } = require("lodash"),
-const rule = require("../../../lib/rules/plural-paths"),
+const rule = require("../../../lib/rules/require-plural-paths"),
     // fs = require("fs"),
     // spec = fs.readFileSync(__dirname + "/fixtures/pet-store.swagger.json"),
     RuleTester = require("eslint").RuleTester;
@@ -77,7 +77,7 @@ let errors = [{
 }];
 */
 const ruleTester = new RuleTester();
-ruleTester.run("plural-paths", rule, {
+ruleTester.run("require-plural-paths", rule, {
 
     valid: [{
         code: "module.exports = {\"swagger\":\"2.0\",\"paths\":{\"/pets\":null}};"

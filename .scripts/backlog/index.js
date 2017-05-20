@@ -30,7 +30,7 @@ function sortRulesByName (defs) {
 }
 
 function createNewIssueLink(def) {
-    const desc = truncate(`${def.description}`, 35);
+    const desc = truncate(`${def.description}`, 35).toLowerCase();
     const title = escape(`feat(${def.name}): ${desc}`);
     const labels = [
         "ESLint: Rule",
