@@ -12,10 +12,10 @@
 - [Table of contents](#table-of-contents)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Supported Rules](#supported-rules)
+- [Supported rules](#supported-rules)
 	- [Semantic validations](#semantic-validations)
 - [Rules in backlog](#rules-in-backlog)
-- [Contributing](#contributing)
+- [Contributions](#contributions)
 - [License](#license)
 
 <!-- /TOC -->
@@ -77,7 +77,7 @@ Finally, run `ESLint` against your Swagger documents.
 $ eslint path/to/swagger/docs/** --fix
 ```
 
-## Supported Rules
+## Supported rules
 
 > ###### `options` legend
 >
@@ -128,7 +128,7 @@ The product backlog has lots of lonely `rules` looking for love from nice contri
 |  | [`require-plural-paths`](https://github.com/gregswindle/eslint-plugin-swagger-tools/issues/5) | Require plural nouns in API paths | #5 In Progress |
 |  | [`require-unique-paths`](https://github.com/gregswindle/eslint-plugin-swagger-tools/issues/new?title=feat%28require-unique-paths%29%3A%20Each%20API%20%60path%60%20should%20be%20u...&labels[]=ESLint%3A%20Rule&labels[]=Status%3A%20Review%20Needed&labels[]=Type%3A%20Feature) | Each API `path` should be unique. _(For Swagger 1.2, this applies to both the Resource Listing and the API Declarations.  For all versions, being unique is both based on verbatim equality and equivalency.  Example: `/pets/{id}` and `/pets/{petId}` are equivalently the same but not the same verbatim.)_  | Available |
 
-## Contributing
+## Contributions
 :family: We warmly welcome contributors. Check out the guidelines for [Contributing to `eslint-plugin-swagger-tools`](./.github/CONTRIBUTING.md) and our [Contributor Covenant Code of Conduct][code-of-conduct-url].
 
 Contributions are stories with a beginning, a middle, and an end, all told through issues and pull requests.
