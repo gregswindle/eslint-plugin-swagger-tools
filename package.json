@@ -15,8 +15,9 @@
   "author": "Greg Swindle",
   "main": "lib/index.js",
   "scripts": {
-    "coverage": "./node_modules/.bin/nyc report",
-    "coverage:coveralls": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
+    "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov",
+    "coverage:codacy": "cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
+    "coverage:coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "git-issue-labels": "./node_modules/.bin/git-labelmaker",
     "postinstall": "npm-install-peers",
     "security": "nsp check --output summary",
@@ -33,6 +34,7 @@
     "yamljs": "^0.2.10"
   },
   "devDependencies": {
+    "codacy-coverage": "^2.0.2",
     "commitplease": "^2.7.10",
     "coveralls": "^2.13.1",
     "eslint": "^3.19.0",
