@@ -1,9 +1,9 @@
 "use strict";
 
-const semanticValidations = require('./semantic-validations');
+const semanticValidations = require("./semantic-validations");
 const { assign, map, reduce, sortBy, truncate } = require("lodash");
 const { bugs } = require("../../package");
-const fs = require("fs");
+// const fs = require("fs");
 
 function addProps(defs) {
     const props = {
@@ -15,7 +15,7 @@ function addProps(defs) {
         return assign(def, props);
     });
     return sortRulesByName(rules);
-};
+}
 
 function updateDefs() {
     const defs = JSON.stringify(addProps(semanticValidations), null, 2);
@@ -53,21 +53,21 @@ function defsToTableMd(defs) {
         return `|  | ${link} | ${def.description} | ${def.status.replace("Status: ", "")} |`;
     });
     const header = [
-      "| `options`        | Rule | Description| Status |",
-      "|:----------------:|:-----|:-----------|:------:|\n"
+        "| `options`        | Rule | Description| Status |",
+        "|:----------------:|:-----|:-----------|:------:|\n"
     ];
     return header.join("\n") + trs.join("\n");
 }
 
-const tableMd = defsToTableMd(semanticValidations);
+// const tableMd = defsToTableMd(semanticValidations);
 
 const backlog = {
     ruleDefinitions: {
-    toMarkdownTable: defsToTableMd,
-    update: updateDefs
-  }
+        toMarkdownTable: defsToTableMd,
+        update: updateDefs
+    }
 };
 
-console.log(backlog.ruleDefinitions.toMarkdownTable(semanticValidations));
+// console.log(backlog.ruleDefinitions.toMarkdownTable(semanticValidations));
 
 module.exports = backlog;

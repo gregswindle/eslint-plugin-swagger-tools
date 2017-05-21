@@ -19,7 +19,7 @@ var { map } = require("lodash"),
 //------------------------------------------------------------------------------
 
 function createExpectedErrorMessages() {
-    const msg = `Style violation: API paths should have plural resources. Change resource \"INVALID_VAL\" to \"VALID_VAL\" (or run eslint with the --fix flag) to automatically ensure style compliance.`;
+    const msg = "Style violation: API paths should have plural resources. Change resource \"INVALID_VAL\" to \"VALID_VAL\" (or run eslint with the --fix flag) to automatically ensure style compliance.";
     const paths = [{
         "invalid": "/pet",
         "valid": "/pets"
@@ -69,12 +69,6 @@ function createExpectedErrorMessages() {
         };
     });
 }
-
-let errors = [{
-    message: "Style violation: API paths should have plural resources. Change resource \"/pet\" to \"/pets\" (or run eslint with the --fix flag) to automatically ensure style compliance."
-}, {
-    message: "Style violation: API paths should have plural resources. Change resource \"/pet/{chipId}\" to \"/pets/{chipId}\" (or run eslint with the --fix flag) to automatically ensure style compliance."
-}];
 
 const ruleTester = new RuleTester();
 ruleTester.run("require-plural-paths", rule, {
