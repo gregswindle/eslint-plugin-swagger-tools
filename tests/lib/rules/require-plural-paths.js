@@ -7,13 +7,14 @@
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
+console.log(__dirname);
 
 var { map } = require("lodash"),
     rule = require("../../../lib/rules/require-plural-paths"),
     fs = require("fs"),
-    spec = fs.readFileSync(__dirname + "/fixtures/pet-store.swagger.json"),
+    path = require('path'),
+    spec = fs.readFileSync(path.resolve("tests/lib/rules/fixtures/pet-store.swagger.json"), "utf8"),
     RuleTester = require("eslint").RuleTester;
-
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
