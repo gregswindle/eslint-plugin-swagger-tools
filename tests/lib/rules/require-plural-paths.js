@@ -8,18 +8,18 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-// var { map } = require("lodash"),
-const rule = require("../../../lib/rules/require-plural-paths"),
-    // fs = require("fs"),
-    // spec = fs.readFileSync(__dirname + "/fixtures/pet-store.swagger.json"),
+var { map } = require("lodash"),
+    rule = require("../../../lib/rules/require-plural-paths"),
+    fs = require("fs"),
+    spec = fs.readFileSync(__dirname + "/fixtures/pet-store.swagger.json"),
     RuleTester = require("eslint").RuleTester;
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
-/*
+
 function createExpectedErrorMessages() {
-    const msg = `Style violation: API paths should have plural resources. Change resource \"INVALID_VAL\" to \"/VALID_VAL\" (or run eslint with the --fix flag) to automatically ensure style compliance.`;
+    const msg = `Style violation: API paths should have plural resources. Change resource \"INVALID_VAL\" to \"VALID_VAL\" (or run eslint with the --fix flag) to automatically ensure style compliance.`;
     const paths = [{
         "invalid": "/pet",
         "valid": "/pets"
@@ -75,7 +75,7 @@ let errors = [{
 }, {
     message: "Style violation: API paths should have plural resources. Change resource \"/pet/{chipId}\" to \"/pets/{chipId}\" (or run eslint with the --fix flag) to automatically ensure style compliance."
 }];
-*/
+
 const ruleTester = new RuleTester();
 ruleTester.run("require-plural-paths", rule, {
 
@@ -96,10 +96,9 @@ ruleTester.run("require-plural-paths", rule, {
         errors: [{
             code: "var spec = {\"swagger\":\"2.0\",\"paths\":{\"/pets/{chipId}\":null}};"
         }]
-    }
-        // {
-        //     code: JSON.stringify(spec.toString()),
-        //     errors: createExpectedErrorMessages()
-        // }
-    ]
+    },
+    {
+        code: `var spec = ${spec.toString()}`,
+        errors: createExpectedErrorMessages()
+    }]
 });

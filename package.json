@@ -18,10 +18,11 @@
     "coverage": "./node_modules/.bin/nyc report",
     "coverage:coveralls": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "git-issue-labels": "./node_modules/.bin/git-labelmaker",
-    "security": "./node_modules/.bin/nsp check --output summary",
+    "postinstall": "npm-install-peers",
+    "security": "nsp check --output summary",
     "pretest": "./node_modules/.bin/eslint -c ./.eslintrc.js --ext .json,.js lib/** --fix",
     "test": "nyc mocha $(find tests -name '*.js')",
-    "posttest": "./node_modules/.bin/nsp check --output summary",
+    "posttest": "nsp check --output summary",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "dependencies": {
@@ -39,10 +40,11 @@
     "git-labelmaker": "^0.9.0",
     "jsdoc": "^3.4.3",
     "mocha": "^3.1.2",
+    "npm-install-peers": "^1.1.0",
     "nsp": "^2.6.3",
     "nyc": "^10.3.2",
-    "semantic-release-cli": "^3.0.3",
-    "semantic-release": "^6.3.6"
+    "semantic-release": "^6.3.6",
+    "semantic-release-cli": "^3.0.3"
   },
   "peerDependencies": {
     "eslint": "^3.19.0"
@@ -56,6 +58,7 @@
       "lib/**/*.js"
     ],
     "exclude": [
+      ".scripts/**/*.js",
       "tests/**/*.js",
       "**/*.spec.js",
       "**/fixtures/**/*.js"
