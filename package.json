@@ -19,7 +19,6 @@
     "coverage:codacy": "cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
     "coverage:coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "git-issue-labels": "./node_modules/.bin/git-labelmaker",
-    "postinstall": "npm-install-peers",
     "security": "nsp check --output summary",
     "pretest": "./node_modules/.bin/eslint -c ./.eslintrc.js --ext .json,.js lib/** --fix",
     "test": "nyc mocha $(find tests -name '*.js')",
@@ -47,9 +46,6 @@
     "nyc": "^10.3.2",
     "semantic-release": "^6.3.6",
     "semantic-release-cli": "^3.0.3"
-  },
-  "peerDependencies": {
-    "eslint": "^3.19.0"
   },
   "engines": {
     "node": ">=6.x"
