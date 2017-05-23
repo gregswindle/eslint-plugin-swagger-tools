@@ -20,17 +20,15 @@ var rule = require("../../../lib/rules/no-path-verbs"),
 var ruleTester = new RuleTester();
 ruleTester.run("no-path-verbs", rule, {
 
-    valid: [
-
-        // give me some code that won't trigger a warning
-    ],
+    valid: [{
+        code: "var spec = {\"swagger\":\"2.0\",\"paths\":{\"/pets\":null}}"
+    }],
 
     invalid: [
         {
-            code: "var spec = {\"swagger\":\"2.0\",\"paths\":{\"/pets/findByStatus\":null}}",
+            code: "var spec = {\"swagger\":\"2.0\",\"paths\":{\"/pets/{id}/findByStatus\":null}}",
             errors: [{
-                message: "Fill me in.",
-                type: "Me too"
+                message: "Best Practices: no verbs in API paths"
             }]
         }
     ]
