@@ -60,3 +60,6 @@ typings/
 # Common directories
 .git-labels
 .github
+
+# Optional "helper" scripts
+.scripts
