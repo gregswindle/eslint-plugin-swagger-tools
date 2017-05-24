@@ -21,7 +21,7 @@ describe("LintError is a custom Error object that", () => {
     });
 
     it("provides a standard error message for context reports", () => {
-        expect(LintError.getContextMessage(ruleMock)).to.equal("Best Practices: a mock rule for this spec.")
+        expect(LintError.getContextMessage(ruleMock)).to.equal("Best Practices: a mock rule for this spec.");
     });
 
 });
