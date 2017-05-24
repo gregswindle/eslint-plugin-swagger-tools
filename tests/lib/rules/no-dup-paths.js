@@ -22,7 +22,7 @@ ruleTester.run("no-dup-paths", rule, {
 
     valid: [{
 
-       code: " var swagger = {\"paths\":{\"/pets/{id}\":null,\"/pets/{id}/registeredIds\":null}}"
+        code: " var swagger = {\"paths\":{\"/pets/{id}\":null,\"/pets/{id}/registeredIds\":null}}"
 
     }],
 
@@ -30,21 +30,21 @@ ruleTester.run("no-dup-paths", rule, {
         {
             code: " var swagger = {\"paths\":{\"/pets/{id}\":null,\"/pets/{id}\":null}}",
             errors: [{
-                message: message,
+                message,
                 type: "Property"
             }]
         },
         {
             code: " var swagger = {\"paths\":{\"/pets/{id}\":null,\"/pets/{uuid}\":null}}",
             errors: [{
-                message: message,
+                message,
                 type: "Property"
             }]
         },
         {
             code: " var swagger = {\"paths\":{\"/pets/{id}/vaccinations/{vaccineId}\":null,\"/pets/{uuid}/vaccinations/{iupacId}\":null}}",
             errors: [{
-                message: message,
+                message,
                 type: "Property"
             }]
         }
