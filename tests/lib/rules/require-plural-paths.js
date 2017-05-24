@@ -18,7 +18,6 @@ var { map } = require("lodash"),
 //------------------------------------------------------------------------------
 
 function createExpectedErrorMessages() {
-    const msg = "Style violation: API paths should have plural resources. Change resource \"INVALID_VAL\" to \"VALID_VAL\" (or run eslint with the --fix flag) to automatically ensure style compliance.";
     const paths = [{
         "invalid": "/pet",
         "valid": "/pets"
@@ -62,7 +61,7 @@ function createExpectedErrorMessages() {
         "invalid": "/user/{username}",
         "valid": "/users/{username}"
     }];
-    return map(paths, (path) => {
+    return map(paths, () => {
         return {
             message: "Stylistic Issues: require plural nouns in API paths."
         };
