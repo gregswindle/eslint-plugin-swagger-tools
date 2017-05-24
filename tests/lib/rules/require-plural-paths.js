@@ -64,7 +64,7 @@ function createExpectedErrorMessages() {
     }];
     return map(paths, (path) => {
         return {
-            message: msg.replace("INVALID_VAL", path.invalid).replace("VALID_VAL", path.valid)
+            message: "Stylistic Issues: require plural nouns in API paths."
         };
     });
 }
