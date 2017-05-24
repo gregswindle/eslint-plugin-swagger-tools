@@ -1,13 +1,14 @@
 # prohibit use of verbs in api paths (`no-path-verbs`)
+> Evaluate whether your service conforms with Level 2 of the Richardson Maturity Model.
 
 Mature RESTful designs represent
 
-* HTTP **paths as resources** and
-* HTTP **methods as operations** available for those resources.
-
-Traditional `RPC` and `SOAP` calls invoke object methods for CRUD operations.
+* **Resources** as **HTTP paths** and
+* **Operations** available for resources as **HTTP methods**.
 
 ## Traditional, non-RESTful operations
+
+Traditional `RPC` and `SOAP` calls expose procedure and method calls for CRUD operations. When `RPC`s and `SOAP` rarely take HTTP method types into consideration beyond data exchange (e.g., sending data in HTTP request and response bodies).
 
 | HTTP method type (verb) | CRUD | Collection<br>(e.g., `/pets`) | Item<br>(e.g., `/pets/{id}`) |
 |:------------------------|:-----|:---------- |:---- |
@@ -32,9 +33,14 @@ RESTful APIs standardize resource operations, e.g., `find`, `get`, `create`, `up
 
 ## Rule Details
 
-This rule looks for common verbs in a resource's API path.
+This rule evaluates API paths for
 
-Examples of **incorrect** code for this rule:
+1. Common (English) verbs
+2. Resources with names identical to its operation
+
+### Examples of _incorrect_ code for this rule:
+
+#### Common verb violations
 
 ```js
 
@@ -42,9 +48,20 @@ Examples of **incorrect** code for this rule:
   "paths": {
     "/pets/findByStatus": ...,
     "/pets/findByTags": ...,
-    "/pets/{petId}/uploadImage": ...,
     "/users/createWithArray": ...,
-    "/users/createWithList": ...,
+    "/users/createWithList": ...
+  }
+}
+
+```
+
+#### Paths that contain their `operation`'s name
+
+```js
+
+{
+  "paths": {
+    "/pets/{petId}/uploadImage": ...,
     "/users/login": ...,
     "/users/logout": ...
   }
@@ -52,7 +69,7 @@ Examples of **incorrect** code for this rule:
 
 ```
 
-Examples of **correct** code for this rule:
+### Examples of _correct_ code for this rule:
 
 ```js
 
@@ -60,7 +77,7 @@ Examples of **correct** code for this rule:
   "paths": {
     "/pets": ...,  // with <query> input params
     "/pets": ...,  // with <query> input params
-    "/pets/{petId}/images": ...,
+    "/pets/{petId}/images": ..., // with uploadImage method
     "/users": ..., // with overloaded operation
     "/users": ..., // with overloaded operation
     "/users/{id}/sessions": ..., // POST
@@ -72,8 +89,23 @@ Examples of **correct** code for this rule:
 
 ## When Not To Use It
 
-Give a short description of when it would be appropriate to turn off this rule.
+Disable this rule _only_ in cases of backwards compatibility.
+
+> ### :neckbeard: Richardson Maturity Model (RMM) Level 2
+>
+> Disabling this rule will affect your RESTful service's maturity level, and your service will not, by definition, achieve [Level 2, "HTTP Verbs"][rmm-level-2-url].
+
+## Version
+
+The `no-path-verbs` rule was introduced to `eslint-plugin-swagger-tools` in version `0.2.0`.
 
 ## Further Reading
 
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
+* [Documentation source][doc-src-url]
+* [Rule source][rule-src-url]
+* [Richardson Maturity Model: steps toward the glory of REST][rmm-url]
+
+[doc-src-url]: ./docs/rules/no-path-verbs.md
+[rule-src-url]: ./lib/rules/no-path-verbs.js
+[rmm-url]: https://martinfowler.com/articles/richardsonMaturityModel.html
+[rmm-level-2-url]: https://martinfowler.com/articles/richardsonMaturityModel.html#level2

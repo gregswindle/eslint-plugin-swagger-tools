@@ -3,26 +3,32 @@
 const { expect } = require("chai");
 const PathEvaluator = require("../../../lib/evaluators/path-evaluator");
 
-describe("PathEvaluator provides common API path evaluations, e.g.,", () => {
+describe("evaluators are \"helper\" objects that provide common evaluation methods.", () => {
 
-    const pathEvaluator = new PathEvaluator();
+    //--------------------------------------------------------------------------
+    // PathEvaluator
+    //--------------------------------------------------------------------------
+    describe("PathEvaluator inspects Property[key.type=Literal] ASTNodes, and", () => {
 
-    it("determines whether an ASTNode<Literal> is a path", () => {
-        const mockAstLiteralNode = {
-            key: {
-                value: "/pets/{id}/findByBreed"
-            }
-        };
-        expect(pathEvaluator.isPath(mockAstLiteralNode)).to.equal(true);
+        const pathEvaluator = new PathEvaluator();
 
-        mockAstLiteralNode.key.value = "paths";
+        it("determines whether the node is a path", () => {
+            const mockAstLiteralNode = {
+                key: {
+                    value: "/pets/{id}/findByBreed"
+                }
+            };
+            expect(pathEvaluator.isPath(mockAstLiteralNode)).to.equal(true);
 
-        expect(pathEvaluator.isPath(mockAstLiteralNode)).to.equal(false);
+            mockAstLiteralNode.key.value = "paths";
+
+            expect(pathEvaluator.isPath(mockAstLiteralNode)).to.equal(false);
+        });
+
+        it("determines whether a resource in an API path is a parameter", () => {
+            expect(pathEvaluator.isParameter("{id}")).to.equal(true);
+            expect(pathEvaluator.isParameter("id")).to.equal(false);
+        });
+
     });
-
-    it("determines whether a resource in an API is a parameter", () => {
-        expect(pathEvaluator.isParameter("{id}")).to.equal(true);
-        expect(pathEvaluator.isParameter("id")).to.equal(false);
-    });
-
 });

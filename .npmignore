@@ -63,3 +63,6 @@ typings/
 
 # Optional "helper" scripts
 .scripts
+
+# Reports, e.g., ESLint
+reports
