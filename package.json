@@ -36,7 +36,7 @@
     "yamljs": "^0.2.10"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
+    "chai": "^4.0.1",
     "codacy-coverage": "^2.0.2",
     "commitplease": "^2.7.10",
     "coveralls": "^2.13.1",
