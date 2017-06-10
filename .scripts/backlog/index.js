@@ -26,9 +26,10 @@ const addProps = function(defs) {
         "type": "Type: Feature",
         "pluginElement": "ESLint: Rule"
     };
-    const rules = map(defs, function(def) {
-        return assign(def, props);
-    });
+    const assignProps = function(def) {
+       return assign(def, props);
+    };
+    const rules = map(defs, assignProps);
     return sortRulesByName(rules);
 };
 
