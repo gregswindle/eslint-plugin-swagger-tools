@@ -3,6 +3,17 @@ const { assign, map, reduce, sortBy, truncate } = require("lodash");
 const { bugs } = require("../../package");
 
 /**
+ * Sorts rules by their { name } property.
+ * @private
+ * @param {array<object>} defs Collection of definitions
+ *
+ * @returns {array<object>} Sorted collection of rules.
+ */
+const sortRulesByName = function(defs) {
+    return sortBy(defs, ["name"]);
+};
+
+/**
  * Automatically add issue labels to new Issues
  * @private
  * @param {array<object>} defs Collection of definitions.
@@ -29,17 +40,6 @@ const addProps = function(defs) {
 const updateDefs = function() {
     const defs = JSON.stringify(addProps(semanticValidations), null, 2);
     return defs;
-};
-
-/**
- * Sorts rules by their { name } property.
- * @private
- * @param {array<object>} defs Collection of definitions
- *
- * @returns {array<object>} Sorted collection of rules.
- */
-const sortRulesByName = function(defs) {
-    return sortBy(defs, ["name"]);
 };
 
 /**
