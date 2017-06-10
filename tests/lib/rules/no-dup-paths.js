@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 
 const LintError = require("../../../lib/errors/lint-error");
-const RuleTester = require("eslint").RuleTester;
+const { RuleTester } = require("eslint");
 const rule = require("../../../lib/rules/no-dup-paths");
 
 
