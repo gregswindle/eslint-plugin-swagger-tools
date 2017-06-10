@@ -64,10 +64,10 @@ const createExpectedErrorMessages = () => {
         "invalid": "/user/{username}",
         "valid": "/users/{username}"
     }];
-    const mapErrMsg = () => {
-      return {
-          message: "Stylistic Issues: require plural nouns in API paths."
-      };
+    const mapErrMsg = function() {
+        return {
+            message: "Stylistic Issues: require plural nouns in API paths."
+        };
     };
     return map(paths, mapErrMsg);
 };
