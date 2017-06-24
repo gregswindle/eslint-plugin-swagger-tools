@@ -33,7 +33,7 @@
     "lodash": "^4.17.4",
     "pluralize": "^5.0.0",
     "requireindex": "~1.1.0",
-    "yamljs": "^0.2.10"
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "chai": "^4.0.2",
