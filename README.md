@@ -2,7 +2,8 @@
 
 > {•••} An extensible linter with semantic validations for Swagger specifications.
 
-[![License][license-image]][license-url] [![Readme Score][readme-score-img]][readme-score-url] [![Inline docs][inch-ci-img]][inch-ci-url] [![Build Status][travis-ci-img]][travis-ci-url] [![Codacy Badge][codacy-img]][codacy-url] [![Coverage Status][coveralls-img]][coveralls-url]<br>
+[![License][license-image]][license-url] [![Readme Score][readme-score-img]][readme-score-url] [![Inline docs][inch-ci-img]][inch-ci-url] [![Build Status][travis-ci-img]][travis-ci-url] [![Codacy Badge][codacy-img]][codacy-url] [![Coverage Status][coveralls-img]][coveralls-url][![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-swagger.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-swagger?ref=badge_shield)
+<br>
 [![NSP Status][nsp-img]][nsp-url] [![bitHound Dependencies][bithound-dep-img]][bithound-dep-url] [![bitHound Dev Dependencies][bithound-dev-dep-img]][bithound-dev-dep-url]
 
 ## 1. Table of contents
@@ -171,3 +172,6 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 [stackshare-url]: https://stackshare.io/gregswindle/eslint-plugin-swagger
 [travis-ci-img]: https://travis-ci.org/gregswindle/eslint-plugin-swagger.svg?branch=develop&style=flat-square
 [travis-ci-url]:  https://travis-ci.org/gregswindle/eslint-plugin-swagger
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-swagger.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fgregswindle%2Feslint-plugin-swagger?ref=badge_large)
